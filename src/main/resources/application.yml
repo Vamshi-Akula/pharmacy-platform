@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: pharmacy-platform
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/pharmacy
+      auto-index-creation: true
+  jackson:
+    default-property-inclusion: non_null
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+app:
+  seed:
+    enabled: ${SEED_ENABLED:true}
